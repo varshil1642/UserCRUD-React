@@ -36,3 +36,108 @@
     transform: rotate(360deg);
   }
 }
+
+#root {
+  padding: 0vh;
+}
+
+.table {
+  text-align: center;
+}
+
+.btn-danger {
+  margin-left: 5px;
+}
+
+#custom-table {
+  min-width: 50vw;
+  text-align: center;
+}
+
+#custom-table th,
+td {
+  text-align: center !important;
+}
+
+.add-update-grid {
+  row-gap: 14px;
+  justify-content: center !important;
+}
+
+.delete-btns {
+  margin-left: 8px !important;
+}
+
+.add-button-container {
+  display: flex !important;
+  justify-content: end;
+  padding-right: 0 !important;
+  margin-bottom: 10px;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.form-container {
+  max-width: 600px !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+.buttons-grid {
+  display: flex;
+  justify-content: center;
+  column-gap: 25px;
+}
+
+.table-head {
+  background-color: #1976d2;
+}
+
+.table-head th {
+  color: white;
+  font-size: 16px;
+}
+
+.authenticated-pages {
+  padding: 6vh !important;
+  padding-top: 12vh !important;
+  max-width: unset !important;
+}
+
+.form-snackbar {
+  top: 0 !important;
+}
+
+.image-upload-btn {
+  border-radius: 50% !important;
+  background-image: url("/src/assets/default-user.png");
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+  color: white !important;
+}
+
+.profile-image {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.top-header-user {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 7px;
+}
