@@ -43,6 +43,9 @@
           initSelection: function (element, callback) {},
         });
         clearTimeout(checkContainer);
+        $("#selectDropdown").on("select2:select", () => {
+          $("#selectDropdown").val("").trigger("change");
+        });
       } else {
         setTimeout(checkContainer, 50);
       }

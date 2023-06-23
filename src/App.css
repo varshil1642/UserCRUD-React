@@ -157,3 +157,8 @@ body {
   padding: 0 !important;
   margin: 0 8px !important;
 }
+
+.select2-container:focus-visible,
+.select2-container > * :focus-visible {
+  outline: none !important;
+}
