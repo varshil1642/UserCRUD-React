@@ -39,6 +39,11 @@
 
 #root {
   padding: 0vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 90%;
 }
 
 .table {
@@ -140,4 +145,12 @@ body {
   align-items: center;
   flex-direction: row;
   column-gap: 7px;
+}
+
+.select2-dropdown {
+  z-index: 100000000 !important;
+}
+
+#selectDropdown {
+  min-width: 150px !important;
 }

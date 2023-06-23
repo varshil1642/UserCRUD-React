@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -13,8 +17,42 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>User CRUD</title>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"
+    defer
+  ></script>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    $(document).ready(checkContainer);
+
+    function checkContainer() {
+      if ($("#selectDropdown").length) {
+        //if the container is visible on the page
+        $("#selectDropdown").select2({
+          placeholder: "Select Day",
+        });
+        clearTimeout(checkContainer);
+      } else {
+        setTimeout(checkContainer, 50); //wait 50 ms, then try again
+      }
+    }
+
+    function handleSelectChange(select) {
+      insertTextInEditor(select.value);
+    }
+
+    function insertTextInEditor(value) {
+      window.editor.s.insertHTML(value);
+    }
+  </script>
 </html>

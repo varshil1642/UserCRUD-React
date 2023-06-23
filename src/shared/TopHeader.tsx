@@ -14,7 +14,7 @@ const TopHeader = () => {
 
   const navigate = useNavigate();
 
-  console.log(state.user)
+  console.log(state.user);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" style={{ backgroundColor: "#002e5c" }}>
@@ -23,17 +23,17 @@ const TopHeader = () => {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1 }}
-            className="top-header-user"
           >
-            {state.user.profileImage && (
-              <img className="profile-image" src={state.user.profileImage} />
-            )}
             <Button
               variant="text"
               onClick={() => navigate(`Edit/${state.user.userId}`)}
               color="inherit"
               style={{ fontSize: "15px" }}
+              className="top-header-user"
             >
+              {state.user.profileImage && (
+                <img className="profile-image" src={state.user.profileImage} />
+              )}
               {state.user.firstName + " " + state.user.lastName}
             </Button>
           </Typography>

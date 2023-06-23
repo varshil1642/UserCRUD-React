@@ -202,8 +202,7 @@ export const UserForm = () => {
                           backgroundImage: `url("${
                             inputFile
                               ? URL.createObjectURL(inputFile)
-                              : currentState.user.profileImage +
-                                `?${new Date().toString()}`
+                              : currentState.user.profileImage
                           }")`,
                         }
                       : {}

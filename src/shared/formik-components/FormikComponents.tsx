@@ -46,7 +46,7 @@ export const SelectDropdown = (props: any) => {
         onChange={props.onChange}
         onBlur={props.onBlur}
         error={isValid}
-        value={props.values[props.name] || ""}
+        //value={props.values[props.name] || ""}
       >
         {props.selectdata.map((obj: any) => (
           <MenuItem value={obj.key} key={obj.key}>

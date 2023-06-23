@@ -1,6 +1,5 @@
 import userReducer from "./reducers/userReducer";
 import { applyMiddleware, createStore } from "redux";
-import thunk from "redux-thunk";
 
 var initialState = {
   userList: [],
@@ -17,9 +16,10 @@ try {
 }
 
 const syncLocalStorage = (store: any) => (next: any) => (action: any) => {
+  next(action);
+  
   let stateToSave = store.getState();
   localStorage.setItem("redux_state", JSON.stringify({ ...stateToSave }));
-  return next(action);
 };
 
 const store = createStore(userReducer, initialState, applyMiddleware(syncLocalStorage));
