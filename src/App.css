@@ -147,10 +147,13 @@ body {
   column-gap: 7px;
 }
 
-.select2-dropdown {
-  z-index: 100000000 !important;
-}
+/* Rich text editor custom field */
 
 #selectDropdown {
   min-width: 150px !important;
+}
+
+.jodit-toolbar-button_extraBtn button {
+  padding: 0 !important;
+  margin: 0 8px !important;
 }

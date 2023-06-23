@@ -40,10 +40,11 @@
         //if the container is visible on the page
         $("#selectDropdown").select2({
           placeholder: "Select Day",
+          initSelection: function (element, callback) {},
         });
         clearTimeout(checkContainer);
       } else {
-        setTimeout(checkContainer, 50); //wait 50 ms, then try again
+        setTimeout(checkContainer, 50);
       }
     }
 

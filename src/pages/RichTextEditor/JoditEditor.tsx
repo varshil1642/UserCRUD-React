@@ -1,7 +1,8 @@
 import JoditEditor, { Jodit } from "jodit-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SelectDropdown } from "./../../shared/formik-components/FormikComponents";
 import ReactDOMServer from "react-dom/server";
+import { Button } from "@mui/material";
 
 const List = [
   "Monday",
@@ -138,11 +139,11 @@ const defaultConfig = {
     "hr",
     "eraser",
     "copyformat",
-  ] as string[] | object[],
+  ],
 };
 
 const Editor = () => {
-  const [value, setValue] = useState("Day:");
+  const editorRef = useRef({});
 
   useEffect(() => {
     Jodit.defaultOptions.controls.extraBtn = {
@@ -186,13 +187,24 @@ const Editor = () => {
     };
 
     Jodit.plugins.add("extraBtn", extraBtnPlugin);
-    (window as any).editor = Jodit.make("#txtEditor", joditConfig);
+    editorRef.current = Jodit.make("#txtEditor", joditConfig);
+
+    (window as any).editor = editorRef.current;
   }, []);
 
   return (
     <>
       <textarea id="txtEditor" style={{ display: "none" }}></textarea>
       {/* <JoditEditor value={value} config={defaultConfig}></JoditEditor> */}
+      <Button
+        onClick={() => {
+          console.log((editorRef.current! as any).value);
+        }}
+        variant="contained"
+        color="primary"
+      >
+        Click
+      </Button>
     </>
   );
 };
